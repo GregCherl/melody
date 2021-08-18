@@ -1,3 +1,14 @@
+
+    @font-face {
+        font-family: "Bebas Neue";
+        src: local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+          url("../fonts/BebasNeueRegular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+
 * {
     box-sizing: border-box; /* Позволяет правильно считать ширину и высоту элементов */
 }
@@ -16,8 +27,8 @@ body {
 .navbar {
     max-width: 1280px;
     margin: auto;
-    display: flex; /* Сделали блок гибким */
-    justify-content: space-between; /* Расставили элементы по краям */
+    display: flex; /* Делает блок гибким */
+    justify-content: space-between; /* Расставляет элементы по краям */
     align-items: center;
 }
 
@@ -55,6 +66,72 @@ body {
 font-weight: 700;
 font-size: 17px;
 line-height: 20px;
-text-decoration: none;
+text-decoration: none; /* Отменяет подчеркивание */
 color: white;
+}
+
+.main {
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 54px;
+    display: flex;
+}
+
+.main-info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраивание элементы друг за другом,по вертикали */
+    align-items: center;
+    justify-content: space-between; /* Разбрасывает элементы по краям */
+}
+
+.home-image path {
+    opacity: 0; /* Прозрачность */
+    cursor: pointer; /* Делает курсор в виде пальца */
+}
+
+.home-image path:hover { /* псевдокласс */
+    opacity: 1;
+}
+
+.counter-group {
+    display: flex;
+    flex-direction: column; /* Позволяет элементам встать друг за другом */
+    align-items: center; /* Выравнивание по центру */
+}
+
+.counter-button {
+    background-color: #fff;
+    border: none; /* Убирает обводку */
+    cursor: pointer;
+}
+
+.counter-arrow-down {
+    transform: rotateX(180deg); /* Свойство которое разворачивает картинку на 180 градусов */
+}
+
+.main-title {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 44px;
+    color: #635854;
+}
+
+.counter {
+    font-family: Bebas Neue, sans-serif;
+    color: #635854;
+    font-size: 124px;
+    margin-top: 10px;
+}
+
+.button-primary {
+    background: #3596F5;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    padding: 16px 36px; /*Верх-низ; по краям */
+    cursor: pointer;
 }
