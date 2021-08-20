@@ -115,6 +115,15 @@ path.current-floor {
     transform: rotateX(180deg); /* Свойство которое разворачивает картинку на 180 градусов */
 }
 
+.flats path {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.flats path:hover {
+    opacity: 1;
+}
+
 .main-title {
     margin: 0;
     font-family: "Bebas Neue", sans-serif;
@@ -124,7 +133,7 @@ path.current-floor {
     color: #635854;
 }
 
-.counter {
+.floor-counter {
     font-family: Bebas Neue, sans-serif;
     color: #635854;
     font-size: 124px;
@@ -138,4 +147,103 @@ path.current-floor {
     border: none;
     padding: 16px 36px; /*Верх-низ; по краям */
     cursor: pointer;
+}
+
+.modal {
+    position: fixed; /* фиксированная позиция, поверх всего сайта */
+    left: 0; /* приклеиваем к левому краю */
+    top: 0; /* приклеиваем к верху */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* полупрозрачный фоновый черный цвет */
+    display: flex; /*  родительский элемент - гибкий*/
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Делает полностью прозрачным окно*/
+    transform: scale(0); /* Сожметься в ноль, то есть не будет видно на сайте вообще */
+    transition: opacity 0.2s; /* Добавляем плавности окну, окно будет появляться плавно в течени поставленного времени */
+}
+
+.is-open { /*  */
+    opacity: 1;  
+    transform: scale(1);
+}
+
+.modal-dialog {
+    position: absolute;
+    max-width: 1000px;
+    min-height: 565px;
+    background-color: #fff;
+    flex-grow: 1; 
+    display: flex; 
+    opacity: 0;
+    transform: translateY(-10%); /* Отодвигает на 10% вверх*/
+    transition: transform 0.2s, opacity 0.2s; /* Добавляет плавности */
+    transition-delay: 0.2s;  /* Появлятеся окно с задержкой */
+}
+
+.is-open > .modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-image {
+    background-color: #ebebeb;
+    width: 60%;
+    text-align: center; /* весь текст по центру */
+    padding: 50px;
+}
+
+.modal-title {
+font-family: Bebas Neue, sans-serif;
+font-weight: normal;
+font-size: 24px;
+line-height: 24px;
+margin-top: 0;
+margin-bottom: 25px;
+}
+
+.modal-info {
+    width: 40%;
+    padding: 50px 46px;
+}
+
+.flat-list {
+    padding: 0;
+    list-style: none; /* Отключает точки */
+    margin-top: 55px;
+}
+
+.flat-item {
+    margin-bottom: 10px; /* делаем между ссылками 10 пикселей */
+}
+
+.flat-link {
+font-size: 16px;
+line-height: 19px;
+color: #635854;
+text-decoration: none; /* Убираем подчеркивание текста */
+}
+
+.flat-link:hover { /* при наведение на ссылку,она становится голубой */ 
+    color:#3596F5;
+    text-decoration: underline; /* Делает подчеркивания текста снизу */
+}
+
+.modal-alert {
+font-style: italic;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px; 
+color: #635854;
+margin-top: 56px;
+}
+
+.modal-close-button {
+    position: absolute;
+    right: 27px;
+    top: 38px ;
+    cursor: pointer; /* Добавляет курсор */
+    border: none;
+    background-color:#fff;
 }
